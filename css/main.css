@@ -1,0 +1,159 @@
+@font-face {
+  font-family: avenir;
+  src: url("./fonts/Avenir.otf");
+}
+
+::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  background: transparent !important;
+  -webkit-appearance: none !important;
+  -webkit-overflow-scrolling: none !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  overflow: -moz-scrollbars-none !important;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-family: avenir;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 10;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.1s linear;
+}
+
+.overlay .popup {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  height: 45%;
+  padding: 40px 40px;
+  background-color: black;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.overlay .popup .button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.overlay .popup .text-scroll-container {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.618;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+.overlay .popup .text-scroll-container .text {
+  box-sizing: border-box;
+}
+
+.overlay .popup .text-scroll-container .text a,
+.overlay .popup .text-scroll-container .text a:visited {
+  color: #ffffff;
+}
+
+.overlay .popup .text-scroll-container .links {
+  width: 100%;
+  text-align: center;
+}
+
+.overlay .popup .text-scroll-container .links a {
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.info {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  opacity: 1;
+}
+
+.info .info-button {
+  display: block;
+  margin: 30px 40px;
+  font-size: 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/imgs/shadow.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.layer {
+  display: block;
+  width: 100%;
+  overflow: initial;
+}
+
+.layer-container {
+  width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  .overlay .popup {
+    height: 80%;
+  }
+
+  .shadow {
+    top: 7%;
+  }
+
+  .overlay .popup .text-scroll-container .text,
+  .overlay .popup .text-scroll-container .links a {
+    font-size: 14px;
+  }
+
+  .info .info-button {
+    margin: 20px 24px;
+    font-size: 18px;
+  }
+}
